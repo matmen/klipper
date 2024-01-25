@@ -1101,11 +1101,12 @@ The following command is enabled if a
 has been enabled.
 
 #### SAVE_VARIABLE
-`SAVE_VARIABLE VARIABLE=<name> VALUE=<value>`: Saves the variable to
+`SAVE_VARIABLE VARIABLE=<name> VALUE=<value> [MACRO=<name>]`: Saves the variable to
 disk so that it can be used across restarts. All stored variables are
 loaded into the `printer.save_variables.variables` dict at startup and
 can be used in gcode macros. The provided VALUE is parsed as a Python
-literal.
+literal. If MACRO is supplied, the corresponding `gcode_macro` variable
+will be updated and saved to configuration, so it can persist across restarts.
 
 ### [screws_tilt_adjust]
 
